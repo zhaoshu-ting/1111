@@ -1,5 +1,3 @@
-st.write("DEBUG 当前页面变量：", st.session_state.get("page"))
-st.write(st.session_state)
 import streamlit as st
 import login
 import nav
@@ -23,6 +21,10 @@ if "login_ok" not in st.session_state:
     st.session_state.login_ok = False
 if "page" not in st.session_state:
     st.session_state.page = "首页"
+
+# DEBUG 放到这里，导入+初始化完成后
+st.write("DEBUG 当前页面变量：", st.session_state.get("page"))
+st.write("完整session：", st.session_state)
 
 if not st.session_state.login_ok:
     login.show()
