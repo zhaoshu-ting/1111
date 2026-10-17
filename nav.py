@@ -1,18 +1,19 @@
 import streamlit as st
 
 def show():
-    menu_list = [
-        ("首页", "首页"),
-        ("线上编码工具", "线上编码工具"),
-        ("利润投产测算", "利润投产测算")
-    ]
-    cols = st.columns(len(menu_list))
-    for idx, (label, page_name) in enumerate(menu_list):
-        with cols[idx]:
-            # 当前页面高亮
-            if st.button(label, type="primary" if st.session_state.page == page_name else "secondary"):
-                st.session_state.page = page_name
-                st.rerun() # 点击立刻刷新页面
+    menu_list = ["首页", "线上编码工具", "利润投产测算"]
+    # radio 横向排布
+    selected = st.radio(
+        "页面导航",
+        options=menu_list,
+        index=menu_list.index(st.session_state.page),
+        horizontal=True,
+        key="main_nav_radio"
+    )
+    # 检测是否切换
+    if selected != st.session_state.page:
+        st.session_state.page = selected
+        st.rerun()
 
     # 退出登录按钮
     if st.button("退出登录"):
