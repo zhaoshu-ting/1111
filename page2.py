@@ -1,6 +1,6 @@
 import streamlit as st
 
-def run():
+def show():
     st.markdown("""
     <style>
     .block-container {
