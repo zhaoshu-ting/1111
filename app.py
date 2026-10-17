@@ -27,11 +27,11 @@ if not st.session_state.login_ok:
 else:
     nav.show()
     # 路由判断
-    if st.session_state.page == "首页":
-        home.show()
-    elif st.session_state.page == "线上编码工具":
-        page1.show()
-    elif st.session_state.page == "利润投产测算":
-        page2.show()
-    else:
-        home.show()
+   if st.session_state.page == "首页":
+    home.show()
+elif st.session_state.page == "线上编码工具":
+    page1.run()
+elif st.session_state.page == "利润投产测算":
+    page2.run()
+else:
+    home.show()
