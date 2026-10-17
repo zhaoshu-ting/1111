@@ -1,8 +1,8 @@
 import streamlit as st
 
 def show():
-    current_page = st.session_state.get("page", "首页")
-    c1,c2,c3,c4 = st.columns([1,1,1,2])
+    st.write(f"DEBUG 当前页面: {st.session_state.get('page')}") #调试信息，看变量有没有变
+    c1,c2,c3,c4 = st.columns([0.12,0.16,0.18,0.54])
     with c1:
         if st.button("首页",key="nav_home"):
             st.session_state.page = "首页"
