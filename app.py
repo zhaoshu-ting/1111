@@ -1,3 +1,5 @@
+st.write("DEBUG 当前页面变量：", st.session_state.get("page"))
+st.write(st.session_state)
 import streamlit as st
 import login
 import nav
