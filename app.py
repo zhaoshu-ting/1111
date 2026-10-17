@@ -16,7 +16,7 @@ section[data-testid="stSidebar"]{
 </style>
 """,unsafe_allow_html=True)
 
-#初始化session状态，必须写！
+#初始化session状态
 if "login_ok" not in st.session_state:
     st.session_state.login_ok = False
 if "page" not in st.session_state:
@@ -26,7 +26,7 @@ if not st.session_state.login_ok:
     login.show()
 else:
     nav.show()
-    # 路由判断
+    # 路由
     if st.session_state.page == "首页":
         home.show()
     elif st.session_state.page == "线上编码工具":
